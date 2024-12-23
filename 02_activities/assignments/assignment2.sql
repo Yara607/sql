@@ -176,7 +176,9 @@ VALUES (7,'Apple Pie','10"',3,'unit',CURRENT_TIMESTAMP);
 /* 1. Delete the older record for the whatever product you added. 
 
 HINT: If you don't specify a WHERE clause, you are going to have a bad time.*/
-
+DELETE FROM product_units
+WHERE product_name = 'Apple Pie'
+AND snapshot_time= (SELECT MAX(snapshot_time) FROM product_units);
 
 
 -- UPDATE
