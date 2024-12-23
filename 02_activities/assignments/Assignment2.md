@@ -44,19 +44,23 @@ Additionally, include a date table.
 There are several tools online you can use, I'd recommend [Draw.io](https://www.drawio.com/) or [LucidChart](https://www.lucidchart.com/pages/).
 
 **HINT:** You do not need to create any data for this prompt. This is a conceptual model only. 
-
+![alt text](<Yalda-Rahmati.drawio (1).png>)
 #### Prompt 2
 We want to create employee shifts, splitting up the day into morning and evening. Add this to the ERD.
-
+![alt text](yalda_rahmati.drawio.png)
 #### Prompt 3
 The store wants to keep customer addresses. Propose two architectures for the CUSTOMER_ADDRESS table, one that will retain changes, and another that will overwrite. Which is type 1, which is type 2? 
 
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Your answer...Type 1 is the scenario in which you have a history 
+of a customer's address. If a customer changes his/her address, 
+a new row will be added to the address table. so you keep the history of changes in type 1.
+type 2 is the scenario in which you can not keep the history of 
+the customer's address, each time that customer edit the address
+ the old address will be deleted.
 ```
-
 ***
 
 ## Section 2:
@@ -87,6 +91,7 @@ Find the NULLs and then using COALESCE, replace the NULL with a blank for the fi
 **HINT**: keep the syntax the same, but edited the correct components with the string. The `||` values concatenate the columns into strings. Edit the appropriate columns -- you're making two edits -- and the NULL rows will be fixed. All the other rows will remain the same.
 
 <div align="center">-</div>
+
 
 #### Windowed Functions
 1. Write a query that selects from the customer_purchases table and numbers each customer’s visits to the farmer’s market (labeling each market date with a different number). Each customer’s first visit is labeled 1, second visit is labeled 2, etc. 
